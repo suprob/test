@@ -1,0 +1,63 @@
+@mixin stickyFooter($_x-content, $_x-wrapper: 'body', $_x-ieFix: 'false') {
+  @if $_x-ieFix == 'true' {
+    @at-root body {
+      position: relative;
+    }
+  }
+
+  #{$_x-wrapper} {
+    display: flex;
+    flex-direction: column;
+
+    @if $_x-ieFix == 'true' {
+      height: 100vh;
+    } @else {
+      min-height: 100vh;
+    }
+
+    & > * {
+      flex-shrink: 0;
+    }
+  }
+
+  #{$_x-content} {
+    flex-grow: 1;
+  }
+}
+
+@mixin fluidRem($_x-prop, $_d-minRem, $_d-maxRem, $_mq-min: $mq-600, $_mq-max: $mq-1600) {
+  $_d-mid: "";
+
+  @for $_x-i from 1 through length($_d-maxRem) {
+    $_d-iMin: nth($_d-minRem, $_x-i);
+    $_d-iMax: nth($_d-maxRem, $_x-i);
+
+    @if $_d-iMin == 0 {
+      $_d-iMin: 0rem;
+    }
+
+    @if $_d-iMax == 0 {
+      $_d-iMax: 0rem;
+    }
+
+    $_d-iMid: calc(#{$_d-iMin} + #{($_d-iMax - $_d-iMin) / 1rem} *
+      ((100vw - #{$_mq-min}) / #{($_mq-max - $_mq-min) / 1rem}));
+
+    @if ($_x-i > 1) {
+      $_d-mid: $_d-mid + " ";
+    }
+
+    $_d-mid: $_d-mid + $_d-iMid;
+  }
+
+
+  #{$_x-prop}: #{$_d-minRem};
+
+  @media (min-width: #{$_mq-min}) {
+    #{$_x-prop}: #{$_d-mid};
+  }
+
+  @media (min-width: #{$_mq-max}) {
+    #{$_x-prop}: #{$_d-maxRem};
+  }
+}

@@ -1,0 +1,91 @@
+@import "includes";
+@import "base";
+@import "type";
+
+@include stickyFooter(".page-main");
+
+// Default preview styles ==================
+.preview {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 3em 2em 2em;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  h2 {
+    display: inline-block;
+    position: relative;
+    padding-left: 4.5rem;
+
+    &:before {
+      content: "";
+      height: 4rem;
+      width: 4rem;
+      background: url("../img/icon-experiments.svg") center / contain no-repeat;
+      position: absolute;
+      left: 0rem;
+      bottom: 0;
+    }
+  }
+
+  p {
+    margin: 1em 0;
+    max-width: 45em;
+  }
+
+  a::before {
+    font-family: "icomoon";
+    content: "\ea3c";
+    display: inline-block;
+    margin-right: 0.5em;
+    transform: rotate(180deg);
+    line-height: 1;
+  }
+}
+
+// Layout Styles start below ================
+
+.page-header {
+  padding: 2em;
+  background: coral;
+}
+
+.section {
+  padding: 25vh 0;
+  height: 100vh;
+  position: relative;
+  color: #fff;
+  font-size: 1.5em;
+  h2 {
+    color: #fff;
+  }
+}
+
+.section-inner {
+  max-width: 64rem;
+  width: 90%;
+  margin: auto;
+}
+
+.sticky-top {
+  position: sticky;
+  top: 0;
+}
+
+.one {
+  background: $c-space-cadet;
+}
+
+.two {
+  background: $c-midnight-blue;
+  z-index: 2;
+}
+
+.three {
+  background: $c-sapphire;
+  z-index: 3;
+}
+
+.four {
+  background: $c-lapis;
+  z-index: 4;
+}

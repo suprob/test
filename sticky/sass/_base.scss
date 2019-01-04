@@ -1,0 +1,188 @@
+*,
+*::before,
+*::after {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+@-ms-viewport {
+  width: device-width;
+  zoom: 1;
+}
+
+@viewport {
+  width: device-width;
+  zoom: 1;
+}
+
+// Colors
+$c-space-cadet: rgba(33, 41, 92, 1);
+$c-midnight-blue: rgba(27, 59, 111, 1);
+$c-sapphire: rgba(6, 90, 130, 1);
+$c-lapis: rgba(28, 114, 147, 1);
+$c-wild-yonder: rgba(158, 179, 194, 1);
+$c-bright-alpine: #bde4a7;
+$c-bright-alpine-lt: #dceed1;
+
+$c-text: #495057;
+
+$f-text: "Montserrat", Arial, sans-serif;
+
+// Media Queries
+$mq-1600: 100rem;
+$mq-1500: 93.75rem;
+$mq-1400: 87.5rem;
+$mq-1300: 81.25rem;
+$mq-1200: 75rem;
+$mq-1100: 68.75rem;
+$mq-1000: 65.5rem;
+$mq-900: 56.25rem;
+$mq-800: 50rem;
+$mq-700: 43.75rem;
+$mq-600: 37.5rem;
+$mq-500: 31.25rem;
+$mq-400: 25rem;
+$mq-300: 18.75rem;
+
+html {
+  line-height: 1.4;
+  color: $c-text;
+  font-family: $f-text;
+}
+
+%hide-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  color: transparent;
+}
+
+%visually-hidden {
+  position: absolute;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.button {
+  display: block;
+  width: 100%;
+  max-width: 15em;
+  margin: auto;
+  padding: 0.75em 2em;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  background: #000;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.2;
+  font-family: $f-text;
+  text-transform: uppercase;
+  transition: 0.25s;
+
+  &:hover,
+  &:focus {
+  }
+
+  @media (min-width: $mq-600) {
+    width: auto;
+    display: inline-block;
+  }
+}
+
+input {
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  transition: 0.25s;
+
+  &:hover {
+    border-color: $c-text;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px cyan;
+    border-color: cyan;
+  }
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap; /* 1 */
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+  white-space: inherit;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}

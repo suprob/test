@@ -1,0 +1,115 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat-black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat-blackitalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat-bolditalic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat-italic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat-light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat-lightitalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "icomoon";
+  font-display: auto;
+  src: url("../fonts/icomoon.eot?ayydy0");
+  src: url("../fonts/icomoon.eot?ayydy0#iefix") format("embedded-opentype"),
+    url("../fonts/icomoon.ttf?ayydy0") format("truetype"),
+    url("../fonts/icomoon.woff?ayydy0") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 1em 0;
+  line-height: 1.2;
+  font-weight: bold;
+  color: $c-space-cadet;
+}
+
+h2 {
+  @include fluidRem("font-size", 1.4rem, 2rem);
+  margin: 0;
+}
+
+h3 {
+  @include fluidRem("font-size", 1.4rem, 1.8rem);
+}
+
+p {
+  margin: 0 0 1rem 0;
+}
+
+a {
+  color: $c-lapis;
+  padding: 0.25em 0.25em 0;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: 0.25s;
+
+  &:hover,
+  &:focus {
+    border-bottom-color: $c-lapis;
+  }
+
+  &:focus {
+    outline-style: dotted;
+    outline-width: 2px;
+    outline-color: $c-space-cadet;
+    border-bottom-color: transparent;
+  }
+}
+
+body {
+  font-family: "Montserrat";
+}
